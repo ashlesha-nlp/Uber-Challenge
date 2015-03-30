@@ -7,7 +7,10 @@ from pymongo import MongoClient, GEOSPHERE, TEXT
 class DataProcessor:
 
     def __init__(self):
-        self.client = MongoClient()
+        MONGO_URL = os.environ.get('MONGO_URL')
+        if not MONGO_URL:
+                MONGO_URL = "mongodb://localhost:27017/rest";
+        self.client = MongoClient(MONGO_URL)
         self.db = self.client.test
         self.table = self.db.foodtrucks
         self.datasetUrl = 'https://data.sfgov.org/api/views/rqzj-sfat/rows.json?accessType=DOWNLOAD'

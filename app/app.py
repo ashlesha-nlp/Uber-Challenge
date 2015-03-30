@@ -2,16 +2,19 @@
 import flask
 import pymongo
 import googlemaps
-import memcache
+import pylibmc 
 import pygmaps
 import logging
-
+import os
 
 class Config:
     ''' Initialise all the application configurations '''
+    memcacheServers = os.environ.get('MEMCACHIER_SERVERS', '').split(',')
+    memcacheUser = os.environ.get('MEMCACHIER_USERNAME', '')
+    memcachePass = os.environ.get('MEMCACHIER_PASSWORD', '')
     flaskConfigFile = 'flaskConfig'
-    memcacheHost = '127.0.0.1'
-    memcachePort = '11211'
+    # memcacheHost = '127.0.0.1'
+    # memcachePort = '11211'
     googleApiKey = 'AIzaSyDCKWyYtRBocjN401p85SRwJ_RcA71GG7s'
 
 app = flask.Flask(__name__)
@@ -45,12 +48,16 @@ def postResults():
     distance = int(distanceInMiles)*1600
 
     # Use cached lat, lng for location
-    location = memcacheClient.get(address)
-    if location:
-        lat, lng = location[0], location[1]
-    else:
+    try:
+        location = memcacheClient.get(address.replace(" ", "_"))
+        if location:
+            lat, lng = location[0], location[1]
+        else:
+            lat, lng = getUserLocation(address)
+            memcacheClient.set(address.replace(" ","_"), (lat, lng), 60)
+    except:
         lat, lng = getUserLocation(address)
-        memcacheClient.set(address, (lat, lng), 60)
+
     logger.info("Logging request: %s, %s, %s", address, str(distanceInMiles), str(items))
 
     # Get nearby food trucks for the user location and cuisine
@@ -118,8 +125,12 @@ def setupLogger():
 
 if __name__ == '__main__':
     ''' Initialise and run the Flask app '''
-    memcacheClient = memcache.Client([Config.memcacheHost+':'+Config.memcachePort], check_keys=False)
+    # memcacheClient = memcache.Client([Config.memcacheHost+':'+Config.memcachePort], check_keys=False)
+    memcacheClient = pylibmc.Client(Config.memcacheServers, binary=True, username=Config.memcacheUser, password=Config.memcachePass)#, behaviors={"tcp_nodelay": True, "ketama": True, "no_block": True,})
     mapsClient = googlemaps.Client(Config.googleApiKey)
-    mongoClient = pymongo.MongoClient()
+    MONGO_URL = os.environ.get('MONGO_URL')
+    if not MONGO_URL:
+        MONGO_URL = "mongodb://localhost:27017/rest";
+    mongoClient = pymongo.MongoClient(MONGO_URL)
     logger = setupLogger()
     app.run(debug=True)

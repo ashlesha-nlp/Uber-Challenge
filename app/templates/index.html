@@ -1,0 +1,36 @@
+<html>
+<title>Find Food Trucks</title>
+<body>
+  <script type="text/javascript">
+    function updateTextInput(val) {
+      document.getElementById('radius').innerHTML=val+' miles'; 
+    }
+  </script>
+  <h1>Find food trucks</h1>
+  <form action="" method="post" name="LocationOnMap">
+    <p>
+      Please enter location:<br>
+      {% if error %}
+        <p style="color:red">Please provide location</p>
+      {% endif %}
+      <input type="text" name="address" size="80"><br>
+    </p>
+    <p>
+      Distance (in miles):<br>
+      <input type="range" name="distance" value="1" min="1" max="5" onchange="updateTextInput(this.value);">
+      <p id="radius">1 mile</p>
+    </p>
+    <input type="checkbox" name="item" value="sandwiches">Sandwich<br>
+    <input type="checkbox" name="item" value="burgers">Burger<br> 
+    <input type="checkbox" name="item" value="desserts">Dessert<br>
+    <input type="checkbox" name="item" value="noodles">Noodles<br> 
+    <input type="checkbox" name="item" value="tacos">Tacos<br> 
+    <input type="checkbox" name="item" value="snacks">Snacks<br> 
+    <input type="checkbox" name="item" value="beverages">Hot Beverages<br>
+    <p><input type="submit" value="Submit"></p>
+  </form>
+  {% if results %}
+    <iframe src='/maps' height='500' width='1000'></iframe>
+  {% endif %}
+</body>
+</html>

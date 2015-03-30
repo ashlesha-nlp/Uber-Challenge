@@ -1,0 +1,375 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps - pygmaps </title>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+	function initialize() {
+		var centerlatlng = new google.maps.LatLng(37.787994, -122.407437);
+		var myOptions = {
+			zoom: 15,
+			center: centerlatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		var info = new google.maps.InfoWindow({content: "eritrean & irish fusion burgers, irish stew, eritrean stew, shepard's pie, beverages"});
+		var latlng = new google.maps.LatLng(37.785852, -122.406529);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Celtic Catering",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "kettle corn, funnel cakes, lemonade, beverages, flan"});
+		var latlng = new google.maps.LatLng(37.785396, -122.404391);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Kettle Corn Star",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "kebab, halal gyros, grilled halal meat, beverages"});
+		var latlng = new google.maps.LatLng(37.783470, -122.408041);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Halal Cart",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "eritrean & irish fusion burgers, irish stew, eritrean stew, shepard's pie, beverages"});
+		var latlng = new google.maps.LatLng(37.792390, -122.401270);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Celtic Catering",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.780292, -122.406858);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.786745, -122.397471);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.782049, -122.399577);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.787814, -122.396322);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "eritrean & irish fusion burgers, irish stew, eritrean stew, shepard's pie, beverages"});
+		var latlng = new google.maps.LatLng(37.784980, -122.396536);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Celtic Catering",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "sliders, tater tots, beverages"});
+		var latlng = new google.maps.LatLng(37.789119, -122.395881);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Slider Shack, LLC.",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.780820, -122.400050);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, sandwiches, snacks, prepackaged items, beverages, "});
+		var latlng = new google.maps.LatLng(37.787158, -122.395448);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Paradise Catering",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.784132, -122.395913);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, sandwiches, snacks, prepackaged items, beverages, "});
+		var latlng = new google.maps.LatLng(37.784421, -122.394381);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Paradise Catering",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "sliders, tater tots, beverages"});
+		var latlng = new google.maps.LatLng(37.792536, -122.394593);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Slider Shack, LLC.",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.786091, -122.393473);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.779751, -122.397033);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.794192, -122.393854);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, burrito, corn dog, salads, sandwiches, quesadilla, tacos, fried rice, cow mein, chinese rice, noodle plates, soup, bacon, eggs, ham, avacado, sausages, beverages"});
+		var latlng = new google.maps.LatLng(37.776876, -122.400260);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Eva's Catering",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, burrito, corn dog, salads, sandwiches, quesadilla, tacos, fried rice, cow mein, chinese rice, noodle plates, soup, bacon, eggs, ham, avacado, sausages, beverages"});
+		var latlng = new google.maps.LatLng(37.776099, -122.400287);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Eva's Catering",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "cold truck, pre-packaged sandwiches, burgers, hot dogs, muffin sandwiches, enchiladas, bagels, burritos, salads, snacks, beverages"});
+		var latlng = new google.maps.LatLng(37.791371, -122.390313);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "Steve's Mobile Deli",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+		var info = new google.maps.InfoWindow({content: "soup, salad, sandwiches, beverages, chips & cookies"});
+		var latlng = new google.maps.LatLng(37.801533, -122.401857);
+		var img = new google.maps.MarkerImage('http://chart.apis.google.com/chart?cht=mm&chs=12x16&chco=FFFFFF,0000FF,000000&ext=.png');
+		var marker = new google.maps.Marker({
+		title: "San Francisco Soup Company",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+func = function(info, marker) {
+            return function() {
+                info.open(map, marker);
+            };
+        };
+        google.maps.event.addListener(marker, "click", func(info, marker));
+        
+	}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+	<div id="map_canvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>

@@ -12,8 +12,8 @@ class DataProcessor:
         self.table = self.db.foodtrucks
         self.datasetUrl = 'https://data.sfgov.org/api/views/rqzj-sfat/rows.json?accessType=DOWNLOAD'
 
-    # Populate food trucks data in MongoDB from the raw data file
     def addDataToDb(self):
+    ''' Populate food trucks data in MongoDB from the raw data file '''
         self.table.drop()
         headers = {0:'locationid', 1:'Applicant', 2:'FacilityType', 3:'cnn', 4:'LocationDescription', 5:'Address', 6:'blocklot', 7:'block', 8:'lot', 9:'permit', 10:'Status', 11:'FoodItems', 12:'X', 13:'Y', 14:'Latitude', 15:'Longitude', 16:'Schedule', 17:'NOISent', 18:'Approved', 19:'Received', 20:'PriorPermit', 21:'ExpirationDate', 22:'Location'}
         # Get dataset from url
@@ -46,12 +46,11 @@ class DataProcessor:
             self.table.insert(row)
         self.createIndices()
 
-    # Create geo index for location and multi index on food items
     def createIndices(self):
+    ''' Create geo index for location and multi index on food items '''
         self.table.create_index([("Location", GEOSPHERE)])
         self.table.create_index("FoodItems")
 
 if __name__=='__main__':
     dp = DataProcessor()
     dp.addDataToDb()
-

@@ -1,0 +1,4 @@
+Flask==0.10.1
+pymongo==2.8
+googlemaps==2.2
+pygmaps==0.1.1

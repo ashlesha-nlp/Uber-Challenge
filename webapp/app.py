@@ -13,8 +13,6 @@ class Config:
     memcacheUser = os.environ.get('MEMCACHIER_USERNAME', '')
     memcachePass = os.environ.get('MEMCACHIER_PASSWORD', '')
     flaskConfigFile = 'flaskConfig'
-    # memcacheHost = '127.0.0.1'
-    # memcachePort = '11211'
     googleApiKey = 'AIzaSyDCKWyYtRBocjN401p85SRwJ_RcA71GG7s'
 
 app = flask.Flask(__name__)
@@ -75,7 +73,6 @@ def createMapView(lat, lng, results):
         fooditems = ''
         if "FoodItems" in truck:
             fooditems = ', '.join(truck["FoodItems"])
-        # Create markers for food truck locations on the map
         mapView.addpoint(truck["Location"]["Latitude"], truck["Location"]["Longitude"], "#0000FF", truck["Applicant"], fooditems)
     mapView.draw('./templates/maps.html')
     return mapView
@@ -125,8 +122,7 @@ def setupLogger():
 
 if __name__ == '__main__':
     ''' Initialise and run the Flask app '''
-    # memcacheClient = memcache.Client([Config.memcacheHost+':'+Config.memcachePort], check_keys=False)
-    memcacheClient = pylibmc.Client(Config.memcacheServers, binary=True, username=Config.memcacheUser, password=Config.memcachePass)#, behaviors={"tcp_nodelay": True, "ketama": True, "no_block": True,})
+    memcacheClient = pylibmc.Client(Config.memcacheServers, binary=True, username=Config.memcacheUser, password=Config.memcachePass)
     mapsClient = googlemaps.Client(Config.googleApiKey)
     MONGO_URL = os.environ.get('MONGO_URL')
     if not MONGO_URL:
